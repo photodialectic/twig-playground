@@ -1,6 +1,6 @@
 <?php
 
-require __DIR__ . '/vendor/autoload.php';
+require '../vendor/autoload.php';
 
 $app = new \Slim\App();
 
@@ -9,7 +9,7 @@ $container = $app->getContainer();
 
 // Register Twig View helper
 $container['view'] = function ($c) {
-    $view = new \Slim\Views\Twig('templates');
+    $view = new \Slim\Views\Twig('../templates');
 
     // Instantiate and add Slim specific extension
     $view->addExtension(new Slim\Views\TwigExtension(
